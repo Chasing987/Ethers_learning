@@ -13,7 +13,7 @@ const ERC20_ABI = [
 ];
 
 // Setup contract
-const ERC20_ADDRESS = "0xdac17f958d2ee523a2206206994597c13d831ec7";
+const ERC20_ADDRESS = "0xdac17f958d2ee523a2206206994597c13d831ec7"; // USDT的ERC20的合约地址
 const contract = new ethers.Contract(ERC20_ADDRESS, ERC20_ABI, provider);
 
 async function main() {
@@ -29,7 +29,8 @@ async function main() {
   console.log(`Decimals:${decimals}`);
   console.log(`Total Supply:${totalSupply}`);
   // Get ERC20 balance
-  const USER_ADDRESS = "0x06e668133d7f3ee7dbc2b5371f71e443ea173693";
+  // const USER_ADDRESS = "0x06e668133d7f3ee7dbc2b5371f71e443ea173693"; 
+  const USER_ADDRESS = "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199";  
   const balance = await contract.balanceOf(USER_ADDRESS);
 
   // Log ERC20 balance
